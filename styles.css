@@ -23,6 +23,19 @@
 }
 
 
-html{
-    font-family: Playfair Display, Georgia, serif;
+html {
+  font-family: Playfair Display, Georgia, serif;
+  color: #4F5B2A;
+}
+
+nav {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#home {
+  background-color: #F5EFE3;
+  padding: 100px;
 }
