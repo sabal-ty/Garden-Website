@@ -30,12 +30,17 @@ html {
 
 nav {
   display: flex;
-  justify-content: right;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4F5B2A;
 }
 
 #home {
   background-color: #F5EFE3;
-  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
