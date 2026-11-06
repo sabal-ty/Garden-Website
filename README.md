@@ -1,4 +1,4 @@
-# Tita Valdez Garden Website
+# Tita's Garden Website
 Introduction to Computing Final Project
 # Members: 
 Wynne  
