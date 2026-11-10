@@ -23,36 +23,25 @@
 }
 
 
-html {
-  font-family: Playfair Display, Georgia, serif;
-  background-color: #C8A96B;
+* {
+  box-sizing: border-box;
 }
 
-.site-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #C7D3C0;
-    border-radius: 50px;
-    padding: 5px;
+body {
+  margin: 0;
 }
 
-.site-header a {
-  text-decoration: none;
-  color: inherit;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #99AD7A;
 }
 
-.home {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.home img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 5px;
+.logo {
+  width: 150px;
+  height: auto;
 }
 
 nav ul {
@@ -60,7 +49,4 @@ nav ul {
     align-items: center;
     gap: 25px;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-right: 20px;
 }
