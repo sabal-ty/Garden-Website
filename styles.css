@@ -105,6 +105,7 @@ a:focus-visible,
   z-index: 5;
   padding: 10px 0;
   background-color: var(--sand);
+  border-bottom: double 1px #C7D3C0;
 }
 
 .site-header .container {
@@ -113,10 +114,6 @@ a:focus-visible,
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-  background-color: var(--sage);
-  border-radius: 50px;
-  padding: 5px;
-  box-shadow: var(--shadow);
 }
 
 .site-header a {
@@ -134,32 +131,118 @@ a:focus-visible,
 
 .brand img {
   height: 50px;
-  width: auto;          
-  object-fit: contain;  
+  width: auto;
+  object-fit: contain;
   margin-left: 5px;
 }
 
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 10px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-right: 12px;
+/* ---------- Hamburger menu (HTML‑only) ---------- */
+/* Hide the native checkbox but keep it focusable */
+.nav-toggle {
+  position: absolute;
+  left: -9999px;
 }
 
-nav a {
+/* Hamburger icon */
+.nav-toggle-label {
+  display: inline-block;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+}
+
+/* Bars */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #333;
+  height: 3px;
+  width: 100%;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-label span { top: 50%; transform: translateY(-50%); }
+.nav-toggle-label span::before { content: ""; top: -0.6rem; }
+.nav-toggle-label span::after { content: ""; top: 0.6rem; }
+
+/* Menu – hidden by default */
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--sand-light);
+  border-top: 1px solid var(--sage);
+  display: none;
+  z-index: 4;
+}
+
+/* Show menu when checkbox checked */
+#nav-toggle:checked ~ .nav {
+  display: block;
+}
+
+/* Animate burger to X */
+#nav-toggle:checked + .nav-toggle-label span {
+  background: transparent;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  margin: 0;
+}
+
+.nav li {
+  padding: 0.5rem 0;
+}
+
+.nav a {
   display: block;
   padding: 8px 16px;
   border-radius: 30px;
-  transition: background-color 0.2s;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-  background-color: var(--white);
+#nav-toggle:checked + .nav-toggle-label span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+#nav-toggle:checked + .nav-toggle-label span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Optional: hide hamburger on larger screens and show full nav */
+@media (min-width: 768px) {
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none;
+  }
+  .nav {
+    display: block !important;
+    position: static;
+    background: none;
+    border-top: none;
+  }
+  .nav ul {
+    flex-direction: row;
+    padding: 0;
+    gap: 8px 10px;
+    margin-right: 12px;
+  }
+  .nav li { padding: 0; }
+
+  .nav a:hover,
+  .nav a[aria-current="page"] {
+    background-color: var(--white);
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -315,7 +398,7 @@ details[open] summary { margin-bottom: 8px; }
 @media (max-width: 600px) {
   .site-header .container {
     border-radius: 28px;
-    justify-content: center;
+    justify-content: space-between; /* keep logo left, burger right */
   }
 
   nav ul { justify-content: center; margin-right: 0; }

@@ -17,9 +17,16 @@
     <header class="site-header">
         <div class="container">
             <a class="brand" href="#home">
-                <img src="assets/TitasGardenNav.png" alt="Tita's Garden logo" height="50">              
+                <img src="assets/TitasGardenNav.png" alt="Tita's Garden logo" height="50">
             </a>
-            <nav aria-label="Main">
+
+            <!-- Hamburger toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+
+            <nav class="nav" aria-label="Main">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
