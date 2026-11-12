@@ -7,8 +7,9 @@
         {
             "type": "editor-browser",
             "request": "launch",
-            "name": "Open index.html",
-            "url": "file:///c%3A/Users/LENOVO/OneDrive/Desktop/Web%20development/2/Garden-Website/index.html"
+            "name": "Launch Integrated Browser against localhost",
+            "url": "file:///home/ast3r1us/Documents/School%20Projects/Garden-Website/index.html",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
