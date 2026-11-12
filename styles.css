@@ -1,3 +1,4 @@
+/* ---------- Fonts ---------- */
 @font-face {
   font-family: "Playfair Display";
   src: url("fonts/PlayfairDisplay-Regular.ttf") format("truetype");
@@ -22,31 +23,309 @@
   font-display: swap;
 }
 
+/* ---------- Design tokens ---------- */
+:root {
+  --sand: #C8A96B;
+  --sand-light: #F3EAD6;
+  --sage: #C7D3C0;
+  --leaf: #4F6B4A;
+  --leaf-dark: #364A33;
+  --ink: #2B2B24;
+  --white: #FFFDF8;
+  --radius: 20px;
+  --shadow: 0 4px 14px rgba(43, 43, 36, 0.15);
+}
 
-* {
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  font-family: "Playfair Display", Georgia, serif;
+  background-color: var(--sand);
+  color: var(--ink);
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  color: var(--leaf-dark);
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--leaf-dark); }
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--leaf-dark);
+  outline-offset: 3px;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  background-color: #99AD7A;
+  width: min(1100px, 92%);
+  margin-inline: auto;
 }
 
-.logo {
-  width: 150px;
-  height: auto;
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--white);
+  padding: 8px 14px;
+  z-index: 10;
+}
+
+.skip-link:focus { left: 8px; top: 8px; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 10px 0;
+  background-color: var(--sand);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background-color: var(--sage);
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: var(--shadow);
+}
+
+.site-header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 5px;
 }
 
 nav ul {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 12px;
+}
+
+nav a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: var(--white);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 90px 0 100px;
+}
+
+.hero .container {
+  background-color: var(--sand-light);
+  border-radius: var(--radius);
+  padding: 60px 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero p {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-bottom: 1.5em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background-color: var(--leaf);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 40px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--leaf-dark);
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background-color: var(--white);
+  color: var(--leaf-dark);
+}
+
+.btn-light:hover {
+  background-color: var(--sage);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 40px 0;
+}
+
+.panel {
+  background-color: var(--sand-light);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.page-title {
+  padding: 40px 0 10px;
+  text-align: center;
+}
+
+/* ---------- Grids and cards ---------- */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.card-body { padding: 18px 20px 22px; }
+
+.card-body p:last-child { margin-bottom: 0; }
+
+.placeholder {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--sage), #AEBFA6);
+  display: grid;
+  place-items: center;
+  color: var(--leaf-dark);
+  font-style: italic;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  background-color: var(--sage);
+  padding: 2px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Two column ---------- */
+.split {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+/* ---------- Details (CSS-free accordion, no JS) ---------- */
+details {
+  background-color: var(--white);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details[open] summary { margin-bottom: 8px; }
+
+/* ---------- Contact list ---------- */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--sage);
+}
+
+.contact-list li:last-child { border-bottom: 0; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 60px;
+  padding: 28px 0;
+  background-color: var(--leaf-dark);
+  color: var(--sand-light);
+  text-align: center;
+}
+
+.site-footer a { color: var(--sand-light); }
+
+.site-footer p { margin: 0.3em 0; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .site-header .container {
+    border-radius: 28px;
+    justify-content: center;
+  }
+
+  nav ul { justify-content: center; margin-right: 0; }
+
+  .hero { padding: 40px 0 50px; }
+  .panel { padding: 22px; }
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, nav a { transition: none; }
 }

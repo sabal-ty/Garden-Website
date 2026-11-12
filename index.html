@@ -1,32 +1,276 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tita's Garden</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/TitasGarden.png">
+    <title>Tita's Garden | Plants and Garden Goods</title>
+    <meta name="description" content="Tita's Garden: discover the beauty of nature and explore our diverse collection of plants.">
+    <link rel="icon" type="image/png" href="Assets/TitasGarden.png">
+    <link rel="stylesheet" href="garden.css">
+   
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
         <div class="container">
-            <a class="home" href="index.html"><img src="assets/TitasGardenNav.png" alt="Tita's Garden" class="logo"></a>
-            <nav class="navbar">
+            <a class="brand" href="#home">
+                <img src="Assets/TitasGardenNav.png" alt="Tita's Garden logo" width="50" height="50">
+                <span>Tita's Garden</span>
+            </a>
+            <nav aria-label="Main">
                 <ul>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#plants">Plants</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contacts">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main>
+
+    <main id="main">
+
+        <!-- ================= HOME ================= -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Welcome to Tita's Garden</h1>
+                <p>Discover the beauty of nature and explore our diverse collection of plants.</p>
+                <a href="#plants" class="btn">Explore Plants</a>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+
+                <div class="panel split">
+                    <div>
+                        <h3>Our story</h3>
+                        <p>Tell visitors how Tita's Garden started, who is behind it, and what you love about growing plants.</p>
+                        <p>A few honest sentences work better than a long speech.</p>
+                    </div>
+                    <div class="placeholder" role="img" aria-label="Photo of the owner in the garden">Owner or garden photo</div>
+                </div>
+
+                <div class="grid" style="margin-top:24px;">
+                    <article class="card">
+                        <div class="card-body">
+                            <h3>Healthy plants</h3>
+                            <p>Every plant is raised with care before it goes home with you.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <h3>Friendly advice</h3>
+                            <p>Ask us anything about watering, sunlight, or soil.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <h3>Local and sustainable</h3>
+                            <p>Add a line about how you grow or source your plants.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 style="margin-top:32px;">Common questions</h3>
+                <details>
+                    <summary>Do you deliver?</summary>
+                    <p>Replace with your delivery answer.</p>
+                </details>
+                <details>
+                    <summary>Can I order plants in advance?</summary>
+                    <p>Replace with your ordering answer. <a href="#contact">Contact us</a> to ask.</p>
+                </details>
+                <details>
+                    <summary>What payment methods do you accept?</summary>
+                    <p>Replace with your payment answer.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ================= PLANTS ================= -->
+        <section class="section" id="plants">
+            <div class="container">
+                <h2 class="section-title">Our Plants</h2>
+                <p class="subnav">Jump to:
+                    <a href="#indoor">Indoor</a> ·
+                    <a href="#outdoor">Outdoor</a> ·
+                    <a href="#herbs">Herbs</a>
+                </p>
+
+                <h3 id="indoor">Indoor plants</h3>
+                <div class="grid">
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Indoor</span>
+                            <h3>Plant name</h3>
+                            <p>Light: bright, indirect<br>Water: weekly</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Indoor</span>
+                            <h3>Plant name</h3>
+                            <p>Light: low<br>Water: every two weeks</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Indoor</span>
+                            <h3>Plant name</h3>
+                            <p>Light: bright<br>Water: when dry</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 id="outdoor" style="margin-top:32px;">Outdoor plants</h3>
+                <div class="grid">
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Outdoor</span>
+                            <h3>Plant name</h3>
+                            <p>Light: full sun<br>Water: daily</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Outdoor</span>
+                            <h3>Plant name</h3>
+                            <p>Light: partial shade<br>Water: every few days</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Outdoor</span>
+                            <h3>Plant name</h3>
+                            <p>Light: full sun<br>Water: weekly</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 id="herbs" style="margin-top:32px;">Herbs</h3>
+                <div class="grid">
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Herbs</span>
+                            <h3>Plant name</h3>
+                            <p>Great for cooking.</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Herbs</span>
+                            <h3>Plant name</h3>
+                            <p>Great for tea.</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="placeholder">Plant photo</div>
+                        <div class="card-body">
+                            <span class="tag">Herbs</span>
+                            <h3>Plant name</h3>
+                            <p>Great for pots and windowsills.</p>
+                            <p><strong>₱000</strong></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY ================= -->
+        <section class="section" id="gallery">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <!-- Replace each placeholder div with:
+                     <img src="Assets/your-photo.jpg" alt="Describe the photo" loading="lazy"> -->
+                <div class="grid">
+                    <figure class="card">
+                        <div class="placeholder">Photo 1</div>
+                        <figcaption class="card-body">Caption</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <div class="placeholder">Photo 2</div>
+                        <figcaption class="card-body">Caption</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <div class="placeholder">Photo 3</div>
+                        <figcaption class="card-body">Caption</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <div class="placeholder">Photo 4</div>
+                        <figcaption class="card-body">Caption</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <div class="placeholder">Photo 5</div>
+                        <figcaption class="card-body">Caption</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <div class="placeholder">Photo 6</div>
+                        <figcaption class="card-body">Caption</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="panel split">
+                    <div>
+                        <h3>Visit or reach out</h3>
+                        <ul class="contact-list">
+                            <li><strong>Address:</strong> Your street address, City</li>
+                            <li><strong>Hours:</strong> Mon to Sat, 8:00 AM to 5:00 PM</li>
+                            <li><strong>Phone:</strong> <a href="tel:+630000000000">+63 000 000 0000</a></li>
+                            <li><strong>Email:</strong> <a href="mailto:hello@example.com">hello@example.com</a></li>
+                            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/" rel="noopener">Tita's Garden</a></li>
+                        </ul>
+                        <p style="margin-top:20px;">
+                            <a class="btn" href="mailto:hello@example.com?subject=Question%20for%20Tita%27s%20Garden">Send us an email</a>
+                        </p>
+                    </div>
+                    <div class="placeholder" role="img" aria-label="Map or photo of the garden location">Map or location photo</div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Tita's Garden</p>
+            <p>
+                <a href="#about">About Us</a> ·
+                <a href="#plants">Plants</a> ·
+                <a href="#gallery">Gallery</a> ·
+                <a href="#contact">Contact</a> ·
+                <a href="#home">Back to top</a>
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
