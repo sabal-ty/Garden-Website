@@ -182,3 +182,25 @@ html {
     align-items: center;
     text-align: left;
 }
+/*=========================*/
+.owner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.owner__picture {
+    width: 200px;
+}
+
+.owner__picture img{
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
