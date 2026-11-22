@@ -99,7 +99,7 @@ html {
     background-color: var(--background-color);
     margin: 0;
     padding: 0;              /* no padding, so nothing pushes the image away from the edges */
-    min-height: 100vh;       /* section is as tall as the viewport */
+    min-height: 100dvh;       /* section is as tall as the viewport */
     display: flex;
     flex-direction: row;
     align-items: stretch;    /* both columns become the full height of the section */
@@ -148,43 +148,57 @@ html {
 /*=================================*/
 .about {
     background-color: var(--background-color);
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-}
-
-.about__image {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-}
-
-.about__photo {
-    width: 150px;
-}
-
-.about__image img {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border-radius: 200px 200px 0 0;
+    margin: 0;
+    padding: 0;              /* no padding, so nothing pushes the image away from the edges */
+    min-height: 100dvh;       /* section is as tall as the viewport */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;    /* both columns become the full height of the section */
+    gap: 0;
 }
 
 .about__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* keeps the text vertically centered */
+    align-items: flex-start;
     text-align: left;
+    padding: 0 24px;
+}
+
+.about__content h1{
+    font-family: "Playfair Display", sans-serif;
+    font-size: 3rem;
+    margin: 0 0 8px 0;   /* no top margin, small gap below */
+    line-height: 1.1;    /* tightens the space inside the heading itself */
+    color: var(--accent-color);
+}
+
+.about__content p {
+    font-family: "Inter", sans-serif;
+    font-style: italic;
+    margin: 0;           /* removes the default top margin */
+}
+
+.about__image {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.about__image img {
+    position: absolute;
+    inset: 0;                /* top, right, bottom, left = 0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* fills the whole column and crops instead of shrinking */
+    object-position: center;
+    display: block;
 }
 /*=========================*/
 .owner {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,4 +217,9 @@ html {
     object-fit: cover;
     object-position: center;
     display: block;
+}
+/*=======================================*/
+.plants {
+    background-color: var(--background-color);
+    min-height: 100dvh;
 }
