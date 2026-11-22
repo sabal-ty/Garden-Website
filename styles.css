@@ -1,35 +1,35 @@
 /* Playfair Display Variable Fonts */
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Playfair Display';
+    src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('woff2');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
+    font-family: 'Playfair Display';
+    src: url('fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
 }
 
 /* Inter Variable Fonts */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('woff2');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
 }
 
 /*============*/
@@ -40,6 +40,7 @@
     --accent-color: #455230;
     --text-color: #EBEBD8;
 }
+
 /*===========================================*/
 *,
 *::before,
@@ -47,8 +48,9 @@
     box-sizing: border-box;
 }
 
-html, body {
-    
+html,
+body {
+
     margin: 0;
     padding: 0;
 }
@@ -59,22 +61,22 @@ html {
 
 /*===========================================*/
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 76px;
-    padding: 0 6vw;
-    background-color: var(--accent-color);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(59, 70, 44, 0.85);
+  backdrop-filter: blur(8px);
+  gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
-    width: auto;
-    height: 77px;
+    width: 200px;
+    height: auto;
     display: block;
     object-fit: contain;
 }
@@ -86,7 +88,7 @@ html {
     gap: 2rem;
     margin: 0;
     padding: 0;
-    
+    padding-right: 20px;
 }
 
 .navbar__list a {
@@ -94,66 +96,34 @@ html {
     text-decoration: none;
     color: var(--text-color);
 }
+
 /*=============================================*/
 .home {
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;              /* no padding, so nothing pushes the image away from the edges */
-    min-height: 100dvh;       /* section is as tall as the viewport */
+    min-height: 100dvh;
     display: flex;
-    flex-direction: row;
-    align-items: stretch;    /* both columns become the full height of the section */
-    gap: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("assets/home_image.jpg");
+    background-size: cover;
 }
 
 .home__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* keeps the text vertically centered */
-    align-items: center;
-    text-align: center;
-    padding: 0 24px;
+
 }
 
-.home__content h1{
-    font-family: "Playfair Display", sans-serif;
-    font-size: 3rem;
-    margin: 0 0 8px 0;   /* no top margin, small gap below */
-    line-height: 1.1;    /* tightens the space inside the heading itself */
-    color: var(--accent-color);
-}
-
-.home__content p {
-    font-family: "Inter", sans-serif;
-    font-style: italic;
-    margin: 0;           /* removes the default top margin */
-}
-
-.home__image {
-    flex: 1;
-    min-width: 0;
-    position: relative;
-}
-
-.home__image img {
-    position: absolute;
-    inset: 0;                /* top, right, bottom, left = 0 */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* fills the whole column and crops instead of shrinking */
-    object-position: center;
-    display: block;
-}
 /*=================================*/
 .about {
     background-color: var(--background-color);
     margin: 0;
-    padding: 0;              /* no padding, so nothing pushes the image away from the edges */
-    min-height: 100dvh;       /* section is as tall as the viewport */
+    padding: 0;
+    /* no padding, so nothing pushes the image away from the edges */
+    min-height: 100dvh;
+    /* section is as tall as the viewport */
     display: flex;
     flex-direction: row;
-    align-items: stretch;    /* both columns become the full height of the section */
+    align-items: stretch;
+    /* both columns become the full height of the section */
     gap: 0;
 }
 
@@ -161,24 +131,26 @@ html {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* keeps the text vertically centered */
+    justify-content: center;
+    /* keeps the text vertically centered */
     align-items: flex-start;
     text-align: left;
     padding: 0 24px;
 }
 
-.about__content h1{
+.about__content h1 {
     font-family: "Playfair Display", sans-serif;
     font-size: 3rem;
-    margin: 0 0 8px 0;   /* no top margin, small gap below */
-    line-height: 1.1;    /* tightens the space inside the heading itself */
+    margin: 0 0 8px 0;
+    line-height: 1.1;
     color: var(--accent-color);
 }
 
 .about__content p {
     font-family: "Inter", sans-serif;
     font-style: italic;
-    margin: 0;           /* removes the default top margin */
+    margin: 0;
+    /* removes the default top margin */
 }
 
 .about__image {
@@ -189,13 +161,16 @@ html {
 
 .about__image img {
     position: absolute;
-    inset: 0;                /* top, right, bottom, left = 0 */
+    inset: 0;
+    /* top, right, bottom, left = 0 */
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* fills the whole column and crops instead of shrinking */
+    object-fit: cover;
+    /* fills the whole column and crops instead of shrinking */
     object-position: center;
     display: block;
 }
+
 /*=========================*/
 .owner {
     min-height: 100dvh;
@@ -210,7 +185,7 @@ html {
     width: 200px;
 }
 
-.owner__picture img{
+.owner__picture img {
     inset: 0;
     width: 100%;
     height: 100%;
@@ -218,8 +193,10 @@ html {
     object-position: center;
     display: block;
 }
+
 /*=======================================*/
 .plants {
     background-color: var(--background-color);
     min-height: 100dvh;
 }
+
