@@ -56,13 +56,13 @@ body {
 }
 
 html {
-    scroll-behavior: smooth;
 }
 
 main {
     height: 100dvh;
     overflow-y: scroll;
     scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
 }
 
 section {
